@@ -2,7 +2,6 @@
           (cond (predicate then-clause)
                          (else else-clause)))
 
-
 (define (good-enough? guess x)
        (< (abs (- (square guess) x)) 0.0000000000001))
 
@@ -11,7 +10,6 @@
  
 (define (improve guess x)
        (average guess (/ x guess)))
-
 
 (define (sqrt-iter-old guess x)
       (if (good-enough? guess x)
@@ -25,4 +23,3 @@
 
 (define (sqrt x)
       (sqrt-iter 1.0 x))
-

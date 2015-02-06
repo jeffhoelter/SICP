@@ -9,15 +9,13 @@
 ;; (f n) computes 2n
 
 (define (g n) (A 1 n))
-;; (g n) computes 2 ^ n
+;; (g 0) computes 0
+;; (g > 0) computes 2 ^ n
 
 (define (h n) (A 2 n))
-
+;; (h 0) computes 0
+;; (h 1) computes 2
+;; (h > 1) computes 2 ^ (h (n - 1))
 
 (define (k n) (* 5 n n))
 ;; (k n) computes 5n ^ 2.
-
-
-
-(A 1 n)
-(A 0 (A 1 (- n 1)))

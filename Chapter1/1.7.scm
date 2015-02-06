@@ -26,7 +26,7 @@
 
 ;; Because of the limited precision of good-enough?, the answer produced for small numbers is not very accurate - basically it quits before it does enough evaluations to be close to the right answer.
 
-;; Furthermore, because of the limited precision of the various arithmetic operators used in improve, average, etc, the precision lost there will lead to less than accurate results when used with very small and very large numbers.
+;; Furthermore, because of the limited precision of the very large floating point numbers used in improve, average, etc, the precision lost when the numbers get so big and they can never have enough tolerance to reach our desired tolerance of .001. 
 
 ;; Examples of failure:
 > (square (sqrt .001))

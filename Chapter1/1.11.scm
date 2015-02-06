@@ -8,7 +8,6 @@
                  (* 2 (recursive-f (- n 2)))
                  (* 3 (recursive-f (- n 3)))))))
 
-
 ;; Iterative
 
 (define (iterative-f n)
@@ -16,15 +15,13 @@
     (else (iterative-f-helper 0 1 2 3 n))))
 
 (define (iterative-f-helper previous-value-minus-3 previous-value-minus-2 previous-value-minus-1 counter n)
-    (cond ((= counter n) (next-value previous-value-minus-3 previous-value-minus-2 previous-value-minus-1))
-    (else (iterative-f-helper previous-value-minus-2 previous-value-minus-1 (next-value previous-value-minus-3 previous-value-minus-2 previous-value-minus-1) (+ 1 counter) n))))
+    (cond ((= counter n) (calculate-value previous-value-minus-3 previous-value-minus-2 previous-value-minus-1))
+    (else (iterative-f-helper previous-value-minus-2 previous-value-minus-1 (calculate-value previous-value-minus-3 previous-value-minus-2 previous-value-minus-1) (+ 1 counter) n))))
 
-(define (next-value previous-value-minus-3 previous-value-minus-2 previous-value-minus-1)
+(define (calculate-value previous-value-minus-3 previous-value-minus-2 previous-value-minus-1)
     (+ previous-value-minus-1
        (* 2 previous-value-minus-2)
        (* 3 previous-value-minus-3)))
-
-
 
 ;; (recursive-f -3)
 ;; (recursive-f 1)

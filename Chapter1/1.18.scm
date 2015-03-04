@@ -1,0 +1,1 @@
+(define (double a)          (* a 2))(define (halve a)          (/ a 2))(define (fast-mult-i a b)  (cond ((or (= a 0) (= b 0)) 0)        (else (fast-mult-iter a b 0))))(define (fast-mult-iter a b c)    (cond ((= b 1) (+ a c))          ((even? b) (fast-mult-iter (double a) (halve b) c))          (else (fast-mult-iter a (- b 1) (+ a c)))))
